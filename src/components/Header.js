@@ -3,32 +3,13 @@ import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 import { Logo } from '../svg/logo'
+import { Calendar, DressCode, Ticket, Present } from '../svg/icons'
 
 import './header.css'
 
 class Header extends Component {
   state = {
     fixed: false
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, false)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = e => {
-    const heightToShow = window.innerHeight
-
-    if (window.pageYOffset > heightToShow) {
-      this.setState({ fixed: true })
-    }
-
-    if (window.pageYOffset < heightToShow) {
-      this.setState({ fixed: false })
-    }
   }
 
   render() {
@@ -51,23 +32,23 @@ class Header extends Component {
           <nav className="navigation">
             <ul className="nav-menu">
               <li className="nav-menu-item is-hidden-md" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/">
-                  Lugar & Hora
+                <Link className="nes-btn" to="/place">
+                  <Calendar color="white" /> Lugar & Hora
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/">
-                  Código de Vestimenta
+                <Link className="nes-btn" to="/dress-code">
+                  <DressCode color="white" /> Código de Vestimenta
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/">
-                  Confirmar Asistencia
+                <Link className="nes-btn" to="/form">
+                  <Ticket color="white" /> Confirmar Asistencia
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/">
-                  Detalles
+                <Link className="nes-btn" to="/presents">
+                  <Present color="white" /> Detalles
                 </Link>
               </li>
             </ul>

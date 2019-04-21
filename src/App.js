@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './views/Home'
 import Login from './views/Login'
+import Place from './views/Place'
+import Form from './views/Form'
 import Header from './components/Header'
 
 import './App.css'
@@ -25,8 +27,10 @@ class App extends Component {
       <Router>
         <Header isOpen={open} toggleMenu={this.toggleMenu} />
         <Switch>
-          <Route path="/" exact Component={Home} />
-          <Route path="/login" Component={Login} />
+          <Route path="/" exact component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/place" component={Place} />
+          <Route path="/form" component={Form} />
         </Switch>
       </Router>
     )
