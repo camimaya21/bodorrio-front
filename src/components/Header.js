@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
-import {Logo} from '../svg/logo'
+import { Logo } from '../svg/logo'
 
 import './header.css'
 
@@ -46,28 +46,28 @@ class Header extends Component {
             </button>
           </div>
           <div className="logo-container" onClick={e => toggleMenu()}>
-              <Logo alt="logo" className="logo" />
+            <Logo alt="logo" className="logo" />
           </div>
           <nav className="navigation">
             <ul className="nav-menu">
               <li className="nav-menu-item is-hidden-md" onClick={e => toggleMenu(false)}>
                 <Link className="nes-btn" to="/">
-                Lugar & Hora
+                  Lugar & Hora
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
                 <Link className="nes-btn" to="/">
-                Código de Vestimenta
+                  Código de Vestimenta
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
                 <Link className="nes-btn" to="/">
-                Confirmar Asistencia
+                  Confirmar Asistencia
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
                 <Link className="nes-btn" to="/">
-                Detalles
+                  Detalles
                 </Link>
               </li>
             </ul>
