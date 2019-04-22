@@ -13,7 +13,7 @@ class Place extends Component {
           <p className="date">Sábado, 18 de mayo de 2019</p>
         </section>
         <div className="btn-wrapper">
-          <Link className="nes-btn" to="/form">
+          <Link to="/form">
             <button>> Confirmar Asistencia</button>
           </Link>
         </div>

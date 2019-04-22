@@ -32,22 +32,22 @@ class Header extends Component {
           <nav className="navigation">
             <ul className="nav-menu">
               <li className="nav-menu-item is-hidden-md" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/place">
+                <Link to="/place">
                   <Calendar color="white" /> Lugar & Hora
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/dress-code">
+                <Link to="/dress-code">
                   <DressCode color="white" /> Código de Vestimenta
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/form">
+                <Link to="/form">
                   <Ticket color="white" /> Confirmar Asistencia
                 </Link>
               </li>
               <li className="nav-menu-item" onClick={e => toggleMenu(false)}>
-                <Link className="nes-btn" to="/presents">
+                <Link to="/presents">
                   <Present color="white" /> Detalles
                 </Link>
               </li>
