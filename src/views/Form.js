@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
 import { Link } from "react-router-dom";
-import FormField from "../components/Form-field";
+import FormField from "../components/FormField";
 
 import "./form.css";
 class Form extends Component {

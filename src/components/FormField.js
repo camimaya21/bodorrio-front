@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import InputMask from 'react-input-mask'
-import './form-field.css'
+import './formField.css'
 
 class FormField extends Component {
   state = {
