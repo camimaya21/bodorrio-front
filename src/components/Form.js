@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
 import { Link } from "react-router-dom";
-import FormField from "../components/FormField";
+import FormField from "./FormField";
 
 import "./form.css";
 class Form extends Component {
@@ -35,7 +35,7 @@ class Form extends Component {
           <div className="form-item form-radio">
             <h4>¿Contamos contigo?</h4>
             <label>
-              <input type="radio" className="nes-radio" name="answer" checked />
+              <input type="radio" className="nes-radio" name="answer" defaultChecked />
               <span>Claro que sí <span role="img" aria-label="cat">😻</span></span>
             </label>
             <label>
@@ -58,10 +58,10 @@ class Form extends Component {
             />
           </div>
           <div className="form-item">
-            <label for="textarea_field">Comentarios</label>
+            <label htmlFor="textarea_field">Comentarios</label>
             <textarea
               id="textarea_field"
-              class="nes-textarea"
+              className="nes-textarea"
               name="Comentarios"
               onChange={this.onChange}
             />

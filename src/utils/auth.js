@@ -1,21 +1,19 @@
 import axios from 'axios'
 
 const request = axios.create({
-    baseURL: process.env.NODE_ENV == "production" ? "":'http://localhost:3001',
+    baseURL: process.env.NODE_ENV === "production" ? "":'http://localhost:3001',
     withCredentials: true,
 })
 
-export class AuthAPI {
+class AuthAPI {
 
     static errorHandle(e){
-        console.log('Auth Api error');
-        console.error(e)
         throw e
     }
 
-    static currentUser(){
-        return request.get('/auth/currentuser')
-        .then(res => res.data.user)
+    static isLoggedin(){
+        return request.get('/auth/loggedin')
+        .then(res => res.data)
         .catch(AuthAPI.errorHandle)
     }
 
@@ -31,3 +29,5 @@ export class AuthAPI {
         .catch(AuthAPI.errorHandle)
     }
 }
+
+export default AuthAPI

@@ -1,30 +1,34 @@
 import React, { Component } from 'react'
-import { AuthAPI } from '../utils/auth'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import AuthAPI from '../utils/auth'
 
+import { USER_UPDATED } from '../actions'
 class LoginForm extends Component {
 
     constructor(){
         super()
         this.state = {
-            username:"",
-            password:""
+            username:'',
+            password:'',
+            error: null
         }
     }
 
     handleLogin(){
-        const {username, password} = this.state
-        const {history, dispatch} = this.props
+        const { username, password } = this.state
+        const { updateUser, history, isLogged } = this.props
+
         AuthAPI.login(username, password)
         .then( user =>{
-            console.log(user)
-            // dispatch(clearMessages())
-            // dispatch(login(user))
-            // history.push('/')
+            updateUser(user)
+            isLogged()
+            history.push("/")
         })
         .catch( e => {
-            console.log(e)
-            // dispatch(errorMessageAction("Invalid login credentials"))
+            this.setState({error: e})
         })
+        
     }
 
     render() {
@@ -42,4 +46,20 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm
+const mapState = ({user}) => {
+    return {
+        user
+    }
+}
+
+const mapDispatch = dispatch => {
+    return {
+        updateUser: payload => {
+            dispatch({
+              type: USER_UPDATED,
+              payload
+            })
+          }
+    }
+}
+export default connect(mapState, mapDispatch)(withRouter(LoginForm))

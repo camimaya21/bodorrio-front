@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import LoginForm from "../components/LoginForm";
 
-const Login= () => {
+const LoginPage = ({history, ...props}) => {
   return (
     <Fragment>
-      <LoginForm />
+      <LoginForm history={history} isLogged={props.isLogged}/>
     </Fragment>
   );
 };
 
-export default Login
+export default LoginPage
