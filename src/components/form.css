@@ -8,10 +8,18 @@
     padding: 10px 0;
 } 
 
+.form-item h4 {
+    font-weight: 500;
+}
+
 .form-radio label:last-child {
     margin-left: 10%;
 }
 
 .nes-input, .nes-textarea {
     border-image-width: 1;
+}
+
+.nes-input {
+    padding: 0;
 }
