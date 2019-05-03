@@ -28,6 +28,12 @@ class AuthAPI {
         .then(() => console.log('logout'))
         .catch(AuthAPI.errorHandle)
     }
+
+    static sendForm(id, confirm, numberPeople, alergies, specialDiet, comments){
+        return request.post('/form', {id, confirm, numberPeople, alergies, specialDiet, comments})
+        .then(res => res.data)
+        .catch(AuthAPI.errorHandle)
+    }
 }
 
 export default AuthAPI

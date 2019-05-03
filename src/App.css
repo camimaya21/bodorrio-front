@@ -2,7 +2,8 @@
 
 .section-wrapper {
     position: absolute;
-    width: 375px;
+    width: 100%;
+    max-width: 414px;
     left: 0px;
     right: 0px;
     top: 60px;

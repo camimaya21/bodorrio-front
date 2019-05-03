@@ -4,6 +4,7 @@ import { USER_UPDATED } from '../actions'
 
 import FormField from "./FormField";
 import { formToJson } from "../utils/form"
+import AuthAPI from '../utils/auth'
 
 import "./form.css";
 class Form extends Component {
@@ -14,11 +15,14 @@ class Form extends Component {
   }
 
   confirm(e) {
- //   const { updateUser } = this.props
     e.preventDefault();
+    const { user } = this.props
     const data = formToJson(e.target)
-console.log(data)
-  //  updateUser(data)
+    const {confirm, numberPeople, alergies, specialDiet, comments } = data
+    const id = user.user._id
+    AuthAPI.sendForm(id, confirm, numberPeople, alergies, specialDiet, comments)
+
+    // pendiente mostrar un modal que diga gracias y redigir a place o home
   }
 
   onChange = value => {
@@ -27,6 +31,8 @@ console.log(data)
   };
 
   render() {
+    const { user } = this.props
+
     return (
       <div className="section-wrapper">
         <section className="info-wrapper">
@@ -36,9 +42,9 @@ console.log(data)
               🎟️
             </span>{" "}
           </h2>
-          <h1 className="title">Entonces... Bolt</h1>
+          <h1 className="title">Entonces... {user.user.name}</h1>
         </section>
-        <form className="form-wrapper" ref={this.form} onSubmit={this.confirm}>
+        <form className="form-wrapper" ref={this.form} onSubmit={(e) => this.confirm(e)}>
           <div className="form-item">
             <h4>¿Contamos contigo?</h4>
             <label className="nes-field">
@@ -78,7 +84,7 @@ console.log(data)
             <textarea
               id="textarea_field"
               className="nes-textarea"
-              name="coments"
+              name="comments"
               onChange={this.onChange}
             />
           </div>
