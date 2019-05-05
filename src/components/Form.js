@@ -22,12 +22,15 @@ class Form extends Component {
     const {confirm, numberPeople, alergies, specialDiet, comments } = data
     const id = user.user._id
     AuthAPI.sendForm(id, confirm, numberPeople, alergies, specialDiet, comments).then( user => {
-      alert("gracias")
+      confirm === "yes" ? (
+        alert("Gracias por confirmar... ¡Nos vemos en la boda! 😘")
+      ) : (
+        alert("Gracias por confirmar... 😘")
+      )
       return history.push("/place")
     }).catch(e => {
        console.error(e)
     })
-    // pendiente mostrar un modal que diga gracias
   }
 
   onChange = value => {
