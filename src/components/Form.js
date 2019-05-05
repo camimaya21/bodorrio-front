@@ -7,6 +7,7 @@ import { formToJson } from "../utils/form"
 import AuthAPI from '../utils/auth'
 
 import "./form.css";
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -16,13 +17,17 @@ class Form extends Component {
 
   confirm(e) {
     e.preventDefault();
-    const { user } = this.props
+    const { history, user } = this.props
     const data = formToJson(e.target)
     const {confirm, numberPeople, alergies, specialDiet, comments } = data
     const id = user.user._id
-    AuthAPI.sendForm(id, confirm, numberPeople, alergies, specialDiet, comments)
-
-    // pendiente mostrar un modal que diga gracias y redigir a place o home
+    AuthAPI.sendForm(id, confirm, numberPeople, alergies, specialDiet, comments).then( user => {
+      alert("gracias")
+      return history.push("/place")
+    }).catch(e => {
+       console.error(e)
+    })
+    // pendiente mostrar un modal que diga gracias
   }
 
   onChange = value => {
@@ -74,9 +79,9 @@ class Form extends Component {
           <div className="form-item">
             <h4>Dieta Especial</h4>
             <select className="nes-input"  name="specialDiet" onChange={this.onChange}>
-              <option className="form-item" defaultChecked value={1}>Ninguna</option>
-              <option className="form-item" value={2}>Vegetariano</option>
-              <option className="form-item" value={3}>Vegano</option>
+              <option className="form-item" defaultChecked value="Ninguna">Ninguna</option>
+              <option className="form-item" value="Vegetariano">Vegetariano</option>
+              <option className="form-item" value="Vegano">Vegano</option>
             </select>
           </div>
           <div className="form-item">

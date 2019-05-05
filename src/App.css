@@ -10,6 +10,12 @@
     margin: 0 auto;
 } 
 
+.section-body {
+    font-size: 14px;
+    line-height: normal;
+    color: #979797;
+}
+
 .info-wrapper {
     padding: 1rem;
     position: relative;
@@ -79,6 +85,8 @@
     margin: 0;
     margin-left: 5px;
 }
+
+
 
 @media screen and (min-width: 1025px) {
     .App {
