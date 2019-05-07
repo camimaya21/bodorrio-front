@@ -31,7 +31,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const { username, password } = this.state;
+    const { username } = this.state;
     return (
       <div className="login-page">
         <div className="login-wrapper">
@@ -56,7 +56,6 @@ class LoginForm extends Component {
           <input
             className="login-input"
             placeholder="Buena suerte con la contraseña..."
-            value={password}
             type="password"
             onChange={e => this.setState({ password: e.target.value })}
           />

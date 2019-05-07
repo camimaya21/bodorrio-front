@@ -29,8 +29,8 @@ class AuthAPI {
         .catch(AuthAPI.errorHandle)
     }
 
-    static sendForm(id, confirm, numberPeople, alergies, specialDiet, comments){
-        return request.post('/form', {id, confirm, numberPeople, alergies, specialDiet, comments})
+    static sendForm(username, confirm, numberPeople, alergies, specialDiet, comments){
+        return request.post('/form', {username, confirm, numberPeople, alergies, specialDiet, comments})
         .then(res => res.data)
         .catch(AuthAPI.errorHandle)
     }

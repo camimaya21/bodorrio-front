@@ -20,12 +20,13 @@ class Form extends Component {
     const { history, user } = this.props
     const data = formToJson(e.target)
     const {confirm, numberPeople, alergies, specialDiet, comments } = data
-    const id = user.user._id
-    AuthAPI.sendForm(id, confirm, numberPeople, alergies, specialDiet, comments).then( user => {
+    const username = user.user.username
+    
+    AuthAPI.sendForm(username, confirm, numberPeople, alergies, specialDiet, comments).then( user => {
       confirm === "yes" ? (
         alert("Gracias por confirmar... ¡Nos vemos en la boda! 😘")
       ) : (
-        alert("Gracias por confirmar... 😘")
+        alert("Gracias por confirmar... En otra ocasión será 😘")
       )
       return history.push("/place")
     }).catch(e => {
@@ -58,8 +59,8 @@ class Form extends Component {
             <label className="nes-field">
               <select className="nes-input"  name="confirm" onChange={this.onChange}>
                 <option className="form-item" defaultChecked value="yes">Claro que sí guapis
-                 😻</option>
-                <option className="form-item" value="no">No 💔</option>
+                </option>
+                <option className="form-item" value="no">No</option>
               </select>
             </label>
             
