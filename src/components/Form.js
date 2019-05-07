@@ -57,14 +57,9 @@ class Form extends Component {
             <h4>¿Contamos contigo?</h4>
             <label className="nes-field">
               <select className="nes-input"  name="confirm" onChange={this.onChange}>
-              {
-        //eslint-disable-next-line react/jsx-no-target-blank
-        }
-                <option className="form-item" defaultChecked value="yes">Claro que sí guapis <span role="img" aria-label="cat">😻</span></option>
-                {
-        //eslint-disable-next-line react/jsx-no-target-blank
-        }
-                <option className="form-item" value="no">No <span role="img" aria-label="broken-heart">💔</span></option>
+                <option className="form-item" defaultChecked value="yes">Claro que sí guapis
+                 😻</option>
+                <option className="form-item" value="no">No 💔</option>
               </select>
             </label>
             
