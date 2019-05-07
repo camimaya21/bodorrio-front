@@ -1,7 +1,7 @@
 .login-page {
     width: 100vw;
     height: 100vh;
-    background-color: lightseagreen;
+    background-color:lightseagreen;
     color: #FCFCFC;
 }
 
@@ -24,8 +24,8 @@
 .login-subtitle {
     width: 226px;
     height: 42px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 18px;
     display: flex;
     align-items: center;
     color: #FCFCFC;

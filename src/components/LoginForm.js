@@ -62,7 +62,7 @@ class LoginForm extends Component {
           />
 
           <p className="login-details">
-            Si te atascas con la contraseña, llámanos 😉
+            Si te atascas con la contraseña, llámanos <span role="img" aria-label="wink">😉</span>
           </p>
           <div className="btn-wrapper" style={{justifyContent: 'flex-start'}}>
             <button style={{width: '100%'}} onClick={() => this.handleLogin()}>> Empezar</button>
