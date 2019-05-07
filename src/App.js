@@ -8,6 +8,8 @@ import LoginPage from './views/LoginPage'
 import PlacePage from './views/PlacePage'
 import FormPage from './views/FormPage'
 import Header from './components/Header'
+import Presents from './views/PresentsPage'
+import DressCode from './views/DressCodePage'
 import AuthAPI from './utils/auth'
 
 import './App.css'
@@ -78,6 +80,8 @@ class App extends Component {
                   <Route exact path="/" component={HomePage} key="home"/>
                   <Route exact path="/place" component={PlacePage} key="place"/> 
                   <Route exact path="/form" component={FormPage} key="form"/>
+                  <Route exact path="/presents" component={Presents} key="presents"/>
+                  <Route exact path="/dress-code" component={DressCode} key="dressCode"/>
                 </Switch>
               </RouteContainer>
           </Fragment>
